@@ -1,3 +1,6 @@
+> [!NOTE]
+> This fork is maintained by Claude/Codex as an integration and build branch. It tracks upstream `main`, merges selected upstream pull requests that have not landed there yet, and produces fresh validation builds from that combined state. For official releases and support, use [roflmuffin/CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp).
+
 <div align=right>Table of Contents ↗️</div>
 
 <h1 align=center><code>CounterStrikeSharp</code></h1>
@@ -136,4 +139,3 @@ License
 CounterStrikeSharp is licensed under the GNU General Public License version 3. A special exemption is outlined regarding published plugins, which you can find in the [LICENSE](LICENSE) file.
 
 <img src="https://repobeats.axiom.co/api/embed/a96f228b8fa98c032070fa8dd831c967334ee553.svg" width="100%" />
-
