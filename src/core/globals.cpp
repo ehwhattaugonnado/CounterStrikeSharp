@@ -23,7 +23,6 @@
 #include "core/managers/server_manager.h"
 #include "core/managers/voice_manager.h"
 #include "core/managers/usermessage_manager.h"
-#include <public/game/server/iplayerinfo.h>
 #include <public/entity2/entitysystem.h>
 
 #include <funchook.h>
@@ -44,12 +43,9 @@ IVEngineServer2* engineServer2 = nullptr;
 IVEngineServer* engine = nullptr;
 IGameEventManager2* gameEventManager = nullptr;
 IGameEventSystem* gameEventSystem = nullptr;
-IPlayerInfoManager* playerinfoManager = nullptr;
-IBotManager* botManager = nullptr;
 IServerPluginHelpers* helpers = nullptr;
 IUniformRandomStream* randomStream = nullptr;
 IEngineTrace* engineTrace = nullptr;
-IEngineSound* engineSound = nullptr;
 IEngineServiceMgr* engineServiceManager = nullptr;
 INetworkMessages* networkMessages = nullptr;
 INetworkStringTableContainer* netStringTables = nullptr;
