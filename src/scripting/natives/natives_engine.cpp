@@ -16,7 +16,6 @@
 
 #include "igameeventsystem.h"
 
-#include <IEngineSound.h>
 #include <edict.h>
 #include <eiface.h>
 #include <filesystem.h>
@@ -100,7 +99,7 @@ bool PrecacheSound(ScriptContext& script_context)
 {
     auto [name, preload] = script_context.GetArguments<const char*, bool>();
 
-    return globals::engineSound->PrecacheSound(name, preload);
+    return globals::engine->PrecacheGeneric(name, preload) != 0;
 }
 
 void AddResource(ScriptContext& script_context)
@@ -111,16 +110,14 @@ void AddResource(ScriptContext& script_context)
 
 bool IsSoundPrecached(ScriptContext& script_context)
 {
-    auto name = script_context.GetArgument<const char*>(0);
-
-    return globals::engineSound->IsSoundPrecached(name);
+    script_context.ThrowNativeError("IsSoundPrecached is no longer supported by the CS2 SDK.");
+    return false;
 }
 
 float GetSoundDuration(ScriptContext& script_context)
 {
-    auto name = script_context.GetArgument<const char*>(0);
-
-    return globals::engineSound->GetSoundDuration(name);
+    script_context.ThrowNativeError("GetSoundDuration is no longer supported by the CS2 SDK.");
+    return 0;
 }
 
 // void EmitSound(ScriptContext& script_context)

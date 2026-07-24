@@ -2,6 +2,8 @@
 #include "core/gameconfig.h"
 #include "core/globals.h"
 #include "public/variant.h"
+#include "public/gametrace.h"
+#include "public/mathlib/transform.h"
 #include "entity2/entitysystem.h"
 #include "game/shared/ehandle.h"
 

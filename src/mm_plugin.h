@@ -21,7 +21,6 @@
 #include <functional>
 #include <iserver.h>
 #include <igameevents.h>
-#include <iplayerinfo.h>
 #include <sh_vector.h>
 #include <vector>
 #include "entitysystem.h"
