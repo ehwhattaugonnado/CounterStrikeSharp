@@ -10,6 +10,7 @@
 #include "iserver.h"
 
 class IGameEventManager2;
+class IBotManager;
 class IServerPluginHelpers;
 class IUniformRandomStream;
 class IEngineTrace;
@@ -59,6 +60,7 @@ namespace globals {
 extern IVEngineServer* engine;
 extern IVEngineServer2* engineServer2;
 extern IGameEventManager2* gameEventManager;
+extern IBotManager* botManager;
 extern IServerPluginHelpers* helpers;
 extern IUniformRandomStream* randomStream;
 extern IEngineTrace* engineTrace;
