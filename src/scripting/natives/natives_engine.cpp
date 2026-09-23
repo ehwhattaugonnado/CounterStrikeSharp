@@ -95,51 +95,11 @@ void PrecacheModel(ScriptContext& script_context)
     globals::engine->PrecacheGeneric(name);
 }
 
-bool PrecacheSound(ScriptContext& script_context)
-{
-    auto [name, preload] = script_context.GetArguments<const char*, bool>();
-
-    return globals::engine->PrecacheGeneric(name, preload) != 0;
-}
-
 void AddResource(ScriptContext& script_context)
 {
     auto name = script_context.GetArgument<const char*>(0);
     m_exportResourceManifest->AddResource(name);
 }
-
-bool IsSoundPrecached(ScriptContext& script_context)
-{
-    script_context.ThrowNativeError("IsSoundPrecached is no longer supported by the CS2 SDK.");
-    return false;
-}
-
-float GetSoundDuration(ScriptContext& script_context)
-{
-    script_context.ThrowNativeError("GetSoundDuration is no longer supported by the CS2 SDK.");
-    return 0;
-}
-
-// void EmitSound(ScriptContext& script_context)
-//{
-//    auto client = script_context.GetArgument<int>(0);
-//    auto entitySource = script_context.GetArgument<int>(1);
-//    auto channel = script_context.GetArgument<int>(2);
-//    auto sound = script_context.GetArgument<const char*>(3);
-//    auto volume = script_context.GetArgument<float>(4);
-//    auto attenuation = script_context.GetArgument <float>(5);
-//    auto flags = script_context.GetArgument<int>(6);
-//    auto pitch = script_context.GetArgument<int>(7);
-//    auto origin = script_context.GetArgument<Vector*>(8);
-//    auto direction = script_context.GetArgument<Vector*>(9);
-//
-//    auto recipients = new CustomRecipientFilter();
-//    recipients->AddPlayer(client);
-//
-//    globals::engineSound->EmitSound(static_cast<IRecipientFilter&>(*recipients),
-//                                     entitySource,channel, sound, -1, sound, volume,
-//                                     attenuation, 0, flags, pitch, origin, direction);
-// }
 
 double GetTickedTime(ScriptContext& script_context) { return globals::timerSystem.GetTickedTime(); }
 
@@ -260,10 +220,6 @@ REGISTER_NATIVES(engine, {
     ScriptEngine::RegisterNativeHandler("ISSUE_SERVER_COMMAND", ServerCommand);
     ScriptEngine::RegisterNativeHandler("PRECACHE_MODEL", PrecacheModel);
     ScriptEngine::RegisterNativeHandler("ADD_RESOURCE", AddResource);
-    ScriptEngine::RegisterNativeHandler("PRECACHE_SOUND", PrecacheSound);
-    ScriptEngine::RegisterNativeHandler("IS_SOUND_PRECACHED", IsSoundPrecached);
-    ScriptEngine::RegisterNativeHandler("GET_SOUND_DURATION", GetSoundDuration);
-    // ScriptEngine::RegisterNativeHandler("EMIT_SOUND", EmitSound);
 
     ScriptEngine::RegisterNativeHandler("GET_TICKED_TIME", GetTickedTime);
     ScriptEngine::RegisterNativeHandler("QUEUE_TASK_FOR_FRAME", QueueTaskForFrame);
